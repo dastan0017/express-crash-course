@@ -1,0 +1,23 @@
+<h1 class="text-center mb-3">{{title}}</h1>
+<form action="/api/members" class="mb-5" method="post">
+	<div class="form-grou">
+		<label for="name">Name</label>
+		<input type="text" class="form-control" name="name" />
+
+		<label for="age">Age</label>
+		<input type="number" class="form-control" name="age" />
+
+		<input
+			type="submit"
+			value="Add Soldier"
+			class="btn btn-primary btn-block mt-2"
+		/>
+	</div>
+</form>
+<h3>Soldiers</h3>
+<ul class="list-group">
+	{{#each members}}
+		<li class="list-group-item">{{this.name}} at age {{this.age}}</li>
+	{{/each}}
+</ul>
+<a href="/api/members" class="btn btn-secondary mt-4">VISIT API</a>
